@@ -5,4 +5,4 @@ Team leads: Rays Jiang and Minh Pham
 ![complete_pipeline](./complete_pipeline.jpg)
 
 ## Simplified pipeline:
-![simplified_pipeline](./simplified_pipeline.jpg)
+![simplified_pipeline](./simpLified_pipeline.jpg.jpg)
