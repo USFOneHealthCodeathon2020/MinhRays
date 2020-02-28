@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="static/style.css">
+    </head>
+<body>
+    <fieldset>
+<h1>Tracking Ancient Global Epidemics</h1>
+    </fieldset>
+    <br><br>
+    <p style="color:black; padding-left: 150px" id="output_div"></p>
+    <!-- JS -->
+    <script type="text/javascript">
+        var outputs = [
+            {% for item in outputs %}
+                '{{ item }}',
+            {% endfor %}
+        ];
+        output_div = document.getElementById("output_div");
+        for (i = 0; i < outputs.length; i++){
+            var new_html = outputs[i].replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+            console.log(new_html);
+            output_div.innerHTML = output_div.innerHTML.concat('----------------------------------------------------------------------------------------------------------<br>', new_html);
+        }
+        all_divs = document.getElementsByTagName('pre');
+        for (i=0, max=all_divs.length; i < max; i++){
+            // check if element has 'Query='
+            var element = all_divs[i];
+            if (element.innerHTML.indexOf("Query=") !== -1 || element.innerHTML.indexOf("&gt;") !== -1  ){
+                element.innerHTML = "<font color='red'>".concat(element.innerHTML, "</font>");
+            }
+        }
+
+    </script>
+
+
+
+</body>
+</html>
